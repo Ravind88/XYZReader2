@@ -250,6 +250,7 @@ public class ArticleFragment extends BaseFragment implements LoaderManager.Loade
 
             mPhotoView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
             String photoUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
+
             Glide.with(this)
                     .load(photoUrl)
                     .placeholder(R.color.photo_placeholder)

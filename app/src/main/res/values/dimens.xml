@@ -35,7 +35,7 @@
     <dimen name="fab_compat_border">0dp</dimen>
 
     <!-- list -->
-    <integer name="articles_column_count">1</integer>
+    <integer name="articles_column_count">2</integer>
 
     <!-- detail -->
     <bool name="article_detail_is_card">false</bool>

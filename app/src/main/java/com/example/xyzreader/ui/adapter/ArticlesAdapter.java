@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+import com.example.xyzreader.ui.widget.AspectLockedImageView;
 import com.github.florent37.glidepalette.GlidePalette;
 
 import butterknife.Bind;
@@ -78,7 +79,7 @@ public final class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.
         @Bind(R.id.article_item_footer_container)
         View footerContainerView;
         @Bind(R.id.article_item_photo)
-        ImageView thumbnailView;
+        AspectLockedImageView thumbnailView;
         @Bind(R.id.article_item_title)
         TextView titleView;
         @Bind(R.id.article_item_subtitle)
@@ -123,6 +124,7 @@ public final class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.
             }
 
             String imageUrl = mCursor.getString(ArticleLoader.Query.THUMB_URL);
+            thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
             Glide.with(mActivity)
                     .load(imageUrl)
                     .crossFade()
@@ -130,6 +132,7 @@ public final class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.
                     .listener(GlidePalette.with(imageUrl).intoCallBack(new CallBack() {
                         @Override
                         public void onPaletteLoaded(Palette palette) {
+
                             applyColors(palette.getVibrantSwatch());
                         }
                     }))

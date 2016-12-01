@@ -14,13 +14,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
+        <com.example.xyzreader.ui.widget.AspectLockedImageView
             android:id="@+id/article_item_photo"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:background="@color/photo_placeholder"
             android:contentDescription="@string/article_thumbnail"
             android:scaleType="centerCrop"
+            app:aspectRatio="@dimen/placeholder_article_aspect_ratio"
             tools:src="@drawable/placeholder" />
 
         <LinearLayout
