@@ -121,6 +121,7 @@ public final class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.
             if (mLastItemId != getItemId()) {
                 resetColors();
                 mLastItemId = getItemId();
+
             }
 
             String imageUrl = mCursor.getString(ArticleLoader.Query.THUMB_URL);
